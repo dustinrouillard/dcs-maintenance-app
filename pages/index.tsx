@@ -6,20 +6,19 @@ export default function Home() {
   return (
     <Container>
       <Head>
-        <title>DCS - Maintenance</title>
+        <title>DCS - Upstream Failure</title>
       </Head>
 
       <Main>
-        <Title>Down for maintenance</Title>
+        <Title>Upstream Connection Failed</Title>
 
-        <Description>
-          Giving the servers a bit of TLC, be back soon!
-        </Description>
+        <Description>Unable to reach the upstream</Description>
       </Main>
 
       <Footer>
         <FooterText>
-          Dustin Cloud Services - dstn.to -{" "}
+          Dustin Cloud Services -{" "}
+          <Website href="https://dstn.to">dstn.to</Website> -{" "}
           <Twitter href="https://twitter.com/dustinrouillard">
             @dustinrouillard
           </Twitter>
@@ -71,6 +70,11 @@ const Description = styled.p`
 const FooterText = styled.p``;
 
 const Twitter = styled.a`
+  text-decoration: none;
+  color: #025683;
+`;
+
+const Website = styled.a`
   text-decoration: none;
   color: #025683;
 `;
