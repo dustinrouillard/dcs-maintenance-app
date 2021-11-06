@@ -12,7 +12,7 @@ export default function Home() {
       <Main>
         <Title>Upstream Connection Failed</Title>
 
-        <Description>Unable to reach the upstream</Description>
+        <Description>Unable to reach the upstream server</Description>
       </Main>
 
       <Footer>
