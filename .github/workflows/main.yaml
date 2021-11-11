@@ -37,3 +37,16 @@ jobs:
         with:
           kubeconfig: ${{ secrets.KUBECONFIG }}
           args: rollout status deployment/dcs-maintenance
+
+      # Kubernetes deployment 2nd cluster
+      - uses: actions/checkout@master
+      - name: Deploy to 2nd cluster
+        uses: danielr1996/kubectl-action@1.0.0
+        with:
+          kubeconfig: ${{ secrets.KUBECONFIG_HYDROSIS }}
+          args: set image --record deployment/dcs-maintenance server=ghcr.io/${{ github.repository }}/server:${{ github.sha }}
+      - name: Verify deployment on 2nd cluster
+        uses: danielr1996/kubectl-action@1.0.0
+        with:
+          kubeconfig: ${{ secrets.KUBECONFIG_HYDROSIS }}
+          args: rollout status deployment/dcs-maintenance
